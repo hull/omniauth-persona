@@ -60,7 +60,7 @@ module OmniAuth
       extra{ {:raw_info => raw_info} }
 
       info do
-        gravatar_id = Digest::MD5.hexdigest(email.downcase)
+        gravatar_id = Digest::MD5.hexdigest(raw_info['email'].downcase)
         {
           :name => raw_info['email'],
           :email => raw_info['email'],
